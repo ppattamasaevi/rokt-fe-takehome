@@ -1,0 +1,6 @@
+.placeholder-image {
+  height: 100px;
+  width: 100px;
+  border: solid 1px red;
+  display: inline-block
+}

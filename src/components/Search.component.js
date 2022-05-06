@@ -1,4 +1,4 @@
-const Search = ({ fieldHandler, submitHandler }) => {
+const Search = ({ searchField, fieldHandler, submitHandler }) => {
   return (
     <div>
       <form onSubmit={(e) => submitHandler(e)}>
@@ -6,6 +6,7 @@ const Search = ({ fieldHandler, submitHandler }) => {
           type="text"
           placeholder="Search Images"
           onChange={fieldHandler}
+          value={searchField}
         />
         <button type="submit">Submit</button>
       </form>
