@@ -18,6 +18,9 @@ const Pagination = ({
     displayDescription = `your search for "${prevSearch}"`;
   }
 
+  const prevButtonEnabled = !!prev_page;
+  const nextButtonEnabled = !!next_page;
+
   return (
     <div>
       {total_results < 1 ? (
@@ -33,27 +36,29 @@ const Pagination = ({
       ) : (
         page && (
           <>
-            <p>{`Displaying page ${page} / ${totalPages} from ${displayDescription}`}</p>
+            <p>{`Images from ${displayDescription}`}</p>
+            <p>{`Page ${page} / ${totalPages}`}</p>
           </>
         )
       )}
 
-      {prev_page && (
-        <button
-          value={"prev"}
-          onClick={(e) => paginationHandler(prev_page, page, e)}
-        >
-          Prev
-        </button>
-      )}
-      {next_page && (
-        <button
-          value={"next"}
-          onClick={(e) => paginationHandler(next_page, page, e)}
-        >
-          Next
-        </button>
-      )}
+      <button
+        className={`prev-button ${prevButtonEnabled ? "" : "disabled"}`}
+        disabled={!prevButtonEnabled}
+        value={"prev"}
+        onClick={(e) => paginationHandler(prev_page, page, e)}
+      >
+        Prev
+      </button>
+      <span>/</span>
+      <button
+        className={`prev-button ${nextButtonEnabled ? "" : "disabled"}`}
+        disabled={!nextButtonEnabled}
+        value={"next"}
+        onClick={(e) => paginationHandler(next_page, page, e)}
+      >
+        Next
+      </button>
     </div>
   );
 };

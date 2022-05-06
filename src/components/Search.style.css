@@ -1,0 +1,15 @@
+button {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid purple;
+  margin: 10px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.disabled {
+  text-decoration: line-through;
+  border: none;
+}

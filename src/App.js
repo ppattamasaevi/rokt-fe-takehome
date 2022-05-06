@@ -64,21 +64,31 @@ const App = () => {
   }, []);
 
   return (
-    <div className={"App"}>
-      <h1>{"The Simple Gallery"}</h1>
-      <Search
-        searchField={searchField}
-        fieldHandler={searchFieldHandler}
-        submitHandler={searchSubmitHandler}
-      />
-      <Pagination
-        galleryData={galleryData}
-        paginationHandler={paginationHandler}
-        getCuratedImages={getCuratedImages}
-        dataMode={dataMode}
-        searchHistory={searchHistory}
-      />
-      <Gallery galleryData={galleryData} />
+    <div className={"app"}>
+      <div className="interface-wrapper">
+        <h1>
+          The
+          <br />
+          Simple
+          <br />
+          Gallery
+        </h1>
+        <Search
+          searchField={searchField}
+          fieldHandler={searchFieldHandler}
+          submitHandler={searchSubmitHandler}
+        />
+        <Pagination
+          galleryData={galleryData}
+          paginationHandler={paginationHandler}
+          getCuratedImages={getCuratedImages}
+          dataMode={dataMode}
+          searchHistory={searchHistory}
+        />
+      </div>
+      <div className="gallery-wrapper">
+        <Gallery galleryData={galleryData} />
+      </div>
     </div>
   );
 };

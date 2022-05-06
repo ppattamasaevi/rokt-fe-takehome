@@ -1,0 +1,15 @@
+.grid-wrapper {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+  justify-items: center;
+  align-items: center;
+  margin-top: 50px;
+  overflow: auto;
+  height: 85vh;
+}
+
+.image-container {
+  height: fit-content;
+}
+

@@ -1,5 +1,5 @@
-import { useState } from "react";
 import "./Image.style.css";
+import { useState } from "react";
 
 const Image = ({ photo }) => {
   const [loaded, setLoaded] = useState(false);
@@ -18,7 +18,7 @@ const Image = ({ photo }) => {
         rel="noreferrer"
         title={`By ${photographer}`}
       >
-        <img src={src.small} alt={alt} onLoad={showImage} />
+        <img src={src.medium} alt={alt} onLoad={showImage} />
       </a>
     </>
   );
