@@ -1,5 +1,5 @@
 const Image = ({ photo }) => {
-  const { alt, src, url, height, width, photographer } = photo;
+  const { alt, src } = photo;
 
   return (
     <>
