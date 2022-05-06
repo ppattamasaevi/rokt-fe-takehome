@@ -10,6 +10,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.18.1",
+    "http-errors": "^2.0.0",
     "node-fetch": "^2.6.7",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
@@ -21,7 +22,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "nodemon ./server"
+    "server": "nodemon ./server",
+    "dev": "concurrently \"npm run server\" \"npm run start\""
   },
   "proxy": "http://localhost:8080",
   "eslintConfig": {
@@ -43,6 +45,7 @@
     ]
   },
   "devDependencies": {
+    "concurrently": "^7.1.0",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.16",
     "prettier": "^2.6.2"

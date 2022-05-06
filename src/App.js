@@ -7,7 +7,6 @@ import Search from "./components/Search.component";
 import { useLocalStorage } from "./custom-hooks";
 
 const App = () => {
-  // const [galleryData, setGalleryData] = useState([]);
   const [galleryData, setGalleryData] = useLocalStorage("galleryData", {});
   const [searchField, setSearchField] = useLocalStorage("searchField", "");
 
@@ -65,8 +64,8 @@ const App = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Gallery</h1>
+    <div className={"App"}>
+      <h1>{"The Simple Gallery"}</h1>
       <Search
         searchField={searchField}
         fieldHandler={searchFieldHandler}
