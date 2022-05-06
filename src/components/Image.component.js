@@ -3,7 +3,7 @@ const Image = ({ photo }) => {
 
   return (
     <>
-      <img src={src.medium} />
+      <img src={src.tiny} alt={alt} />
     </>
   );
 };

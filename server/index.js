@@ -1,6 +1,5 @@
 require("dotenv").config();
 const express = require("express");
-const cors = require("cors");
 const morgan = require("morgan");
 const fetch = require("node-fetch");
 
@@ -10,7 +9,6 @@ const fetcher = (url, options) => {
 
 const app = express();
 app.use(morgan("dev"));
-// app.use(express.static("public"));
 
 app.get("/curated/:page?", async (req, res) => {
   const page = req.params.page || 1;
