@@ -4,8 +4,13 @@ A keyword search-enabled photo gallery application. The React client serves imag
 
 ## Install
 
-Run `npm install`
+1. Run `npm install`
 
-Before starting the app, please store the preferred server port number and Pexels API key inside a root-level ".env" file. Please reference the ".env.example" file.
+2. Store the preferred server port number and Pexels API key inside a root-level ".env" file:
 
-Please run `npm run dev` to concurrently spin up the server and launch the React application. If an API key cannot be found, the app will error out.
+EXPRESS_PORT=8080
+API_KEY=yourAPIkey123
+
+Inside "package.json", ensure that "proxy" port number matches the server port number.
+
+3. Finally, run `npm run dev` to concurrently spin up the server and launch the React application. If an API key cannot be found, the app will error out.
