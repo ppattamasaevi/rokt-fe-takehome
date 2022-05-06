@@ -1,21 +1,16 @@
 import "./App.style.css";
 import axios from "axios";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import Gallery from "./components/Gallery.component";
 import Pagination from "./components/Pagination.component";
 import Search from "./components/Search.component";
-import { useLocalStorage } from "./custom-hooks";
 
 const App = () => {
-  // const [galleryData, setGalleryData] = useState([]);
-  const [galleryData, setGalleryData] = useLocalStorage("galleryData", {});
-  const [searchField, setSearchField] = useLocalStorage("searchField", "");
+  const [galleryData, setGalleryData] = useState([]);
+  const [searchField, setSearchField] = useState("");
 
-  const [searchHistory, setSearchHistory] = useLocalStorage(
-    "searchHistory",
-    []
-  );
-  const [dataMode, setDataMode] = useLocalStorage("dataMode", "");
+  const [searchHistory, setSearchHistory] = useState([]);
+  const [dataMode, setDataMode] = useState("");
 
   const paginationHandler = async (url, page, e) => {
     const userIsSearching = url.includes("search");
@@ -34,11 +29,9 @@ const App = () => {
   };
 
   const getCuratedImages = async () => {
-    console.log(galleryData);
-    const { data } = await axios.get("/curated");
+    const res = await axios.get("/curated");
     setDataMode("curated");
-    localStorage.setItem("galleryData", JSON.stringify(data));
-    setGalleryData(data);
+    setGalleryData(res.data);
   };
 
   const searchFieldHandler = (e) => {
@@ -58,15 +51,15 @@ const App = () => {
     setSearchField("");
   };
 
+  useEffect(() => {});
+
   useEffect(() => {
-    if (!galleryData.photos) {
-      getCuratedImages();
-    }
+    getCuratedImages();
   }, []);
 
   return (
     <div>
-      <h1>Gallery</h1>
+      <h1>The Simple Gallery</h1>
       <Search
         searchField={searchField}
         fieldHandler={searchFieldHandler}
